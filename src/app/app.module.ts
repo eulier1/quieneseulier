@@ -3,12 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { SlickModule } from 'ngx-slick';
+import { AboutComponent } from './about/about.component';
+import { PortfolioComponent } from './porfolio/portfolio.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    PortfolioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SlickModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
