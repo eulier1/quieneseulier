@@ -5,18 +5,18 @@
         <div class="container">
           <h1 class="">
               <figure class="image is-128x128">
-                <img class="is-rounded" src="../assets/img/profile-sm.jpg">
+                <img class="is-rounded" src="assets/img/profile-sm.jpg">
               </figure>
           </h1>
           <h1 class="title is-6 title-name">
-            Eulier Arturo González Milano <img class="country-flag" src="../assets/img/ve.svg" alt="">
+            Eulier Arturo González Milano <img class="country-flag" src="assets/img/ve.svg" alt="">
           </h1>
           <h2 class="subtitle is-6">
             Diseñador y desarrollador front-end
           </h2>
           <div class="columns is-gapless " > 
             <div class="column" *ngFor="let navigate of navigations" >
-              <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="#!" (click)="navTo(navigate.name)" >{{navigate.name}}</a>
+              <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="" (click)="navTo(navigate.name, $event)" >{{navigate.name}}</a>
             </div>         
           </div>
         </div>

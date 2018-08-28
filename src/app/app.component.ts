@@ -29,7 +29,8 @@ export class AppComponent {
 
   }
 
-  navTo(name: string){
+  navTo(name: string, ev: any){
+    ev.preventDefault();
     this.selectOption = name;
   }
 
