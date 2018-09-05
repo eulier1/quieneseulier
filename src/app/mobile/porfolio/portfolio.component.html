@@ -1,0 +1,16 @@
+<section class="hero has-background-light is-fullheight">
+  <div class="hero-body custom-body">
+    <div class="container">
+        <h1 class="title is-3 title__font--Timmana"> Ultimos Trabajos </h1>
+        <h1 class="title is-5 has-text-left ">
+          {{currentProjectInfo.name}}
+        </h1>
+        <h2 class="subtitle" [innerHTML]="currentProjectInfo.description" class="has-text-left">
+        </h2>
+        <br>
+        <gallery [items]="images" [thumb]="false" (indexChange)="displayProjectInfo($event)" ></gallery>
+       
+      </div>
+      <a class="anchor__link--continue subtitle is-6" href="javascript:void(0);"  (click)="goToSkill($event)" >Continuar >></a>
+    </div>
+</section>

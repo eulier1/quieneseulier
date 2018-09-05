@@ -1,0 +1,32 @@
+<div [ngSwitch]="selectOption" >
+  <div class="columns is-gapless is-tablet">
+    <div class="column has-text-centered">
+      <section *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
+        <div class="hero-body">
+          <div class="container">
+            <figure class="image is-192x192" >
+              <img class="is-rounded" style="box-shadow: 2px 3px 6px darkolivegreen" src="assets/img/profile-sm.jpg">
+            </figure>
+            <h1 class="title is-6 title-name">
+              Eulier Arturo González Milano <img class="country-flag" src="assets/img/ve.svg" alt="">
+            </h1>
+            <h2 class="subtitle is-6">
+              Diseñador y desarrollador front-end
+            </h2>
+            <div class="columns is-gapless is-mobile" > 
+              <div class="column" *ngFor="let navigate of navigations" >
+                <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="javascript:void(0);" (click)="$event.preventDefault(); navTo(navigate.value)" >{{navigate.name}}</a>
+              </div>         
+            </div>
+          </div>
+        </div>
+      </section>
+      <app-about *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-about>
+      <app-portfolio *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-portfolio>
+      <app-skill *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-skill>
+      <app-other *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-other>
+    </div>
+  </div>
+</div>
+
+    

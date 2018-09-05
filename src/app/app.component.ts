@@ -1,51 +1,45 @@
-import { Component } from '@angular/core';
-
+import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'quieneseulier';
+export class AppComponent implements OnInit, AfterViewInit {
+  public title = 'quieneseulier';
 
-  slides = [
-    {img: 'http://placehold.it/350x150/000000'},
-    {img: 'http://placehold.it/350x150/111111'},
-    {img: 'http://placehold.it/350x150/333333'},
-    {img: 'http://placehold.it/350x150/666666'}
-  ];
-  slideConfig = {'slidesToShow': 4, 'slidesToScroll': 4};
+  public innerWidth = 0
+  public displayMobileUX = false
+  public displayDesktopUX = false
 
-  navigations = [
-    { name: 'Acerca', isActive: true},
-    { name: 'Portafolio', isActive: true},
-    // { name: 'Habilidades', isActive: true},
-    // { name: 'Otros', isActive: true}
-  ]
-
-  selectOption = 'Acerca';
-
-  constructor(){
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
 
   }
 
-  navTo(name: string, ev: any){
-    ev.preventDefault();
-    this.selectOption = name;
+  ngOnInit() {
+    this.innerWidth = window.innerWidth;
   }
 
-  addSlide() {
-    this.slides.push({img: 'http://placehold.it/350x150/777777'})
+  ngAfterViewInit() {
+    this.innerWidth = window.innerWidth;
+    setTimeout( () => {
+      this.onResize()
+    }, 2000);
   }
 
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
+  @HostListener('window:resize', ['$event.target'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
+    if ( this.innerWidth <= 768 ) {
+      console.log('/mobile');
+      this.router.navigateByUrl('/mobile');
+    } else {
+      console.log('/desktop');
+      this.router.navigateByUrl('/desktop');
+    }
   }
-
-  afterChange(e) {
-    console.log('afterChange');
-  }
-
-
 
 }

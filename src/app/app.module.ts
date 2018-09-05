@@ -3,20 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { SlickModule } from 'ngx-slick';
-import { AboutComponent } from './about/about.component';
-import { PortfolioComponent } from './porfolio/portfolio.component';
+import { MobileModule } from './mobile/mobile.module';
+import { RouterModule, Routes } from '@angular/router'
+import { DesktopModule } from './desktop/desktop.module';
 
+
+
+const appRoutes: Routes = [
+  { path: 'mobile', loadChildren: './mobile/mobile.module#MobileModule' },
+  { path: 'desktop', loadChildren: './desktop/desktop.module#DesktopModule' },
+  // { path: '',
+  //   redirectTo: '/mobile',
+  //   pathMatch: 'full'
+  // },
+  // { path: '**', component: AppComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AboutComponent,
-    PortfolioComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    SlickModule.forRoot()
+    RouterModule.forRoot(appRoutes),
+    MobileModule,
+    DesktopModule
   ],
   providers: [],
   bootstrap: [AppComponent]
