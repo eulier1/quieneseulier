@@ -8,9 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class AppComponent implements OnInit, AfterViewInit {
   public title = 'quieneseulier';
 
-  public innerWidth = 0
-  public displayMobileUX = false
-  public displayDesktopUX = false
+  public innerWidth = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.innerWidth = window.innerWidth;
     setTimeout( () => {
-      this.onResize()
+      this.onResize();
     }, 2000);
   }
 

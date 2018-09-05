@@ -15,41 +15,42 @@ export class PortfolioComponent implements OnInit {
   currentProjectInfo: Project;
 
   images: GalleryItem[];
+  currentIndex: number = 0;
 
   constructor() { }
 
   ngOnInit() {
-    this.initGallery()
-    this.initProjectInfo()
+    this.initGallery();
+    this.initProjectInfo();
   }
 
-  displayProjectInfo(ev: any){
+  displayProjectInfo(ev: any) {
     console.log(ev)
-
+    this.currentIndex = ev.currIndex;
     switch (ev.currIndex) {
       case 0:
-        this.showFirstProjectInfo()
+        this.showFirstProjectInfo();
         break;
       case 1:
-        this.showFirstProjectInfo()
+        this.showFirstProjectInfo();
         break;
       case 2:
-        this.showTwoProjectInfo()
+        this.showTwoProjectInfo();
         break;
       case 4:
-        this.showTwoProjectInfo()
+        this.showTwoProjectInfo();
         break;
       case 5:
-        this.showThreeProjectInfo()
+        this.showThreeProjectInfo();
         break;
       case 7:
-        this.showThreeProjectInfo()
+        this.showThreeProjectInfo();
         break;
       case 8:
-        this.showFourProjectInfo()
+        this.showFourProjectInfo();
         break;
       case 15:
-        this.showFourProjectInfo()
+        this.showFourProjectInfo();
         break;
 
       default:
@@ -59,7 +60,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   initProjectInfo() {
-    this.showFirstProjectInfo()
+    this.showFirstProjectInfo();
   }
 
   showFirstProjectInfo() {
@@ -76,7 +77,7 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  showTwoProjectInfo(){
+  showTwoProjectInfo() {
     this.currentProjectInfo = {
       name: 'Menú para hoy',
       description: `
@@ -91,7 +92,7 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  showThreeProjectInfo(){
+  showThreeProjectInfo() {
     this.currentProjectInfo = {
       name: 'Plugstreaming',
       description: `
@@ -105,7 +106,7 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  showFourProjectInfo(){
+  showFourProjectInfo() {
     this.currentProjectInfo = {
       name: 'Bewtinc',
       description: `
@@ -120,11 +121,10 @@ export class PortfolioComponent implements OnInit {
   }
 
   goToSkill(ev: Event) {
-    console.log(ev)
     this.nextStep.emit('Skill');
   }
 
-  private initGallery(){
+  private initGallery() {
     // Set gallery items array
     this.images = [
       new ImageItem({ src: 'assets/img/portfolio1.1.png', thumb: 'assets/img/portfolio1.1.png' }),

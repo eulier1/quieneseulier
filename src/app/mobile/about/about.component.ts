@@ -15,7 +15,6 @@ export class AboutComponent implements OnInit {
   }
 
   goToPortofolio(event: Event) {
-    console.log(event);
     this.nextStep.emit('Portfolio');
   }
 

@@ -1,7 +1,7 @@
 <div [ngSwitch]="selectOption" >
   <div class="columns is-gapless is-tablet">
     <div class="column has-text-centered">
-      <section *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
+      <section [ngClass]="{'animated fadeInUp faster': selectOption === 'Home' }" *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
         <div class="hero-body">
           <div class="container">
             <figure class="image is-192x192" >
@@ -13,18 +13,18 @@
             <h2 class="subtitle is-6">
               Diseñador y desarrollador front-end
             </h2>
-            <div class="columns is-gapless is-mobile" > 
-              <div class="column" *ngFor="let navigate of navigations" >
+            <div class="navigation__item" > 
+              <div class="" *ngFor="let navigate of navigations" >
                 <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="javascript:void(0);" (click)="$event.preventDefault(); navTo(navigate.value)" >{{navigate.name}}</a>
               </div>         
             </div>
           </div>
         </div>
       </section>
-      <app-about *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-about>
-      <app-portfolio *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-portfolio>
-      <app-skill *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-skill>
-      <app-other *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-other>
+      <app-about [ngClass]="{'animated fadeInRight fast': selectOption === 'About' }" *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-about>
+      <app-portfolio [ngClass]="{'animated fadeInRight fast': selectOption === 'Portfolio' }" *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-portfolio>
+      <app-skill [ngClass]="{'animated fadeInRight fast': selectOption === 'Skill' }" *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-skill>
+      <app-other [ngClass]="{'animated fadeInRight fast': selectOption === 'Other' }" *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-other>
     </div>
   </div>
 </div>

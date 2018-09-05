@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MobileRoutingModule } from './mobile-routing.module';
 import { MobileComponent } from './mobile.component';
@@ -15,6 +16,7 @@ import { OtherComponent } from './other/other.component';
     CommonModule,
     BrowserAnimationsModule,
     MobileRoutingModule,
+    ReactiveFormsModule,
     GalleryModule.forRoot()
   ],
   declarations: [ MobileComponent, AboutComponent, PortfolioComponent, SkillComponent, OtherComponent]

@@ -24,18 +24,15 @@ export class MobileComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
     this.selectOption = 'Home';
   }
 
   ngAfterViewInit(){
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
     this.selectOption = 'Home';
   }
 
   navTo(name: string){
-    console.log(name)
     this.selectOption = name;
   }
 
