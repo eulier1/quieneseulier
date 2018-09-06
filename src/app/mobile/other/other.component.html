@@ -33,14 +33,14 @@
 
           <hr>
 
-          <a class="button is-primary" href="javascript:void(0);" (click)="showEmailContact = true" >
+          <!-- <a class="button is-primary" href="javascript:void(0);" (click)="showEmailContact = true" >
             <span>Envíame un email </span> 
             <span class="icon">
               <i class="fas fa-envelope"></i>
             </span>
           </a>
             
-            <form [formGroup]="contactForm" class="animated" *ngIf="showEmailContact" [ngClass]="{
+          <form [formGroup]="contactForm" class="animated" *ngIf="showEmailContact" [ngClass]="{
               'fadeInDown' : showEmailContact,
               'fadeDownUp' : !showEmailContact
             }" >
@@ -90,7 +90,7 @@
                     <span>Enviar</span> 
                   </button>
               </div>
-            </form>
+          </form> -->
         </div>
         <a class="anchor__link--continue subtitle is-6" href="javascript:void(0);"  (click)="$event.preventDefault(); goToHome($event)" > Ir a Home >></a>
       </div>
