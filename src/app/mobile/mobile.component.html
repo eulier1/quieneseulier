@@ -1,7 +1,7 @@
 <div [ngSwitch]="selectOption" >
   <div class="columns is-gapless is-tablet">
     <div class="column has-text-centered">
-      <section [ngClass]="{'animated fadeInUp faster': selectOption === 'Home' }" *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
+      <section [ngClass]="{'animated fadeIn': selectOption === 'Home' }" *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
         <div class="hero-body">
           <div class="container">
             <figure class="image is-192x192" >

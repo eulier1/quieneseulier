@@ -78,10 +78,10 @@
                 <div class="control">
                   <textarea class="textarea" 
                   [ngClass]=" {
-                    'is-sucess':contactForm.get('comment').valid,
-                    'is-warning':!contactForm.get('comment').valid && (contactForm.get('comment').dirty || contactForm.get('comment').touched)
+                    'is-sucess':contactForm.get('message').valid,
+                    'is-warning':!contactForm.get('message').valid && (contactForm.get('message').dirty || contactForm.get('message').touched)
                   } "
-                  formControlName="comment" placeholder="Comentario"></textarea>
+                  formControlName="message" placeholder="Comentario"></textarea>
                 </div>
               </div>
               
