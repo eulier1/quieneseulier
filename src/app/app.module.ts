@@ -14,13 +14,14 @@ import { DesktopModule } from './desktop/desktop.module';
 
 
 const appRoutes: Routes = [
+  { path: '', component: AppComponent },
   { path: 'mobile', loadChildren: './mobile/mobile.module#MobileModule' },
   { path: 'desktop', loadChildren: './desktop/desktop.module#DesktopModule' },
-  // { path: '',
-  //   redirectTo: '/mobile',
-  //   pathMatch: 'full'
-  // },
-  // { path: '**', component: AppComponent }
+  { path: '',
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  { path: '**', component: AppComponent }
 ];
 
 @NgModule({
