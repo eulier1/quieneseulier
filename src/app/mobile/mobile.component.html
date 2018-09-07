@@ -1,10 +1,10 @@
 <div [ngSwitch]="selectOption" >
-  <div class="columns is-gapless is-tablet">
+  <div class="columns is-gapless is-tablet is-multiline">
     <div class="column has-text-centered">
       <section [ngClass]="{'animated fadeIn': selectOption === 'Home' }" *ngSwitchCase="'Home'" class="hero has-background-light is-fullheight" >
         <div class="hero-body">
           <div class="container">
-            <figure class="image is-192x192" >
+            <figure class="image is-128x128" >
               <img class="is-rounded" style="box-shadow: 2px 3px 6px darkolivegreen" src="assets/img/profile-sm.jpg">
             </figure>
             <h1 class="title is-6 title-name">
@@ -20,11 +20,18 @@
             </div>
           </div>
         </div>
+        <footer class="footer has-background-grey-darker">
+          <div class="content has-text-centered">
+            <p class="has-text-white-ter">
+              Made with <i class="fas fa-heart has-text-danger"></i> & <i class="fab fa-angular has-text-danger"></i> 6 Copyright 2018
+            </p>
+          </div>
+        </footer>
       </section>
-      <app-about [ngClass]="{'animated fadeInRight fast': selectOption === 'About' }" *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-about>
-      <app-portfolio [ngClass]="{'animated fadeInRight fast': selectOption === 'Portfolio' }" *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-portfolio>
-      <app-skill [ngClass]="{'animated fadeInRight fast': selectOption === 'Skill' }" *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-skill>
-      <app-other [ngClass]="{'animated fadeInRight fast': selectOption === 'Other' }" *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-other>
+      <app-about *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-about>
+      <app-portfolio *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-portfolio>
+      <app-skill *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-skill>
+      <app-other *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-other>
     </div>
   </div>
 </div>

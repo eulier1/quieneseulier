@@ -1,14 +1,15 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, AfterContentInit } from '@angular/core';
 import { Project } from '../../model/project';
 
 import { GalleryItem, ImageItem } from '@ngx-gallery/core';
+import { removeAnimateCssClassAfterAnimationEnd } from '../../helpers/removeAnimateCssClass';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.sass']
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterContentInit {
 
   @Output() nextStep = new EventEmitter<string>();
 
@@ -22,6 +23,10 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.initGallery();
     this.initProjectInfo();
+  }
+
+  ngAfterContentInit(){
+    removeAnimateCssClassAfterAnimationEnd('portfolioContent', ['Animated', 'fadeInRight', 'fast']);
   }
 
   displayProjectInfo(ev: any) {
@@ -67,7 +72,7 @@ export class PortfolioComponent implements OnInit {
     this.currentProjectInfo = {
       name: 'Intranet',
       description: `
-      <p>Intranet para un cliente que deseaba gestionar la compra y venta de carros que emitía</p>
+      <p>Intranet para gestionar la compra y venta de carros que emitía</p>
       <ul>
       <li> - Diseño utilizando Webflow</li>
       <li> - Implementación del sistema con Laravel, el ORM Eloquent, Jquery y PostgresSQL</li>

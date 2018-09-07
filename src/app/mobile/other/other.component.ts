@@ -1,12 +1,13 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, AfterContentInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+import { removeAnimateCssClassAfterAnimationEnd } from '../../helpers/removeAnimateCssClass';
 @Component({
   selector: 'app-other',
   templateUrl: './other.component.html',
   styleUrls: ['./other.component.sass']
 })
-export class OtherComponent implements OnInit {
+export class OtherComponent implements OnInit, AfterContentInit {
 
   @Output() nextStep = new EventEmitter<string>()
   showEmailContact: boolean = false;
@@ -23,6 +24,10 @@ export class OtherComponent implements OnInit {
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
 
+  }
+
+  ngAfterContentInit() {
+    removeAnimateCssClassAfterAnimationEnd('otherContent', ['Animated', 'fadeInRight', 'fast']);
   }
 
   goToHome(event) {
