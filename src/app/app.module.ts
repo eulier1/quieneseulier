@@ -21,6 +21,14 @@ const appRoutes: Routes = [
     redirectTo: '/',
     pathMatch: 'full'
   },
+  { path: 'mobile/mobile',
+    redirectTo: '/mobile',
+    pathMatch: 'full'
+  },
+  { path: 'desktop/desktop',
+    redirectTo: '/mobile',
+    pathMatch: 'full'
+  },
   { path: '**', component: AppComponent }
 ];
 

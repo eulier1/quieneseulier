@@ -5,10 +5,6 @@ import { AppComponent } from '../app.component';
 
 const routes: Routes = [
   { path: 'desktop', component: DesktopComponent },
-  { path: 'desktop',
-    redirectTo: '/desktop',
-    pathMatch: 'full'
-  },
 ];
 
 @NgModule({

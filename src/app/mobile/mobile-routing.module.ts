@@ -5,10 +5,6 @@ import { AppComponent } from '../app.component';
 
 const routes: Routes = [
   { path: 'mobile', component: MobileComponent },
-  { path: 'mobile',
-    redirectTo: '/mobile',
-    pathMatch: 'full'
-  },
 ];
 
 @NgModule({
