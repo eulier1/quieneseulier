@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MobileComponent } from './mobile.component';
 
 const routes: Routes = [
-  { path: 'mobile', component: MobileComponent }
+  { path: '', component: MobileComponent }
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DesktopComponent } from './desktop.component';
 
 const routes: Routes = [
-  { path: 'desktop', component: DesktopComponent }
+  { path: '', component: DesktopComponent }
 ];
 
 @NgModule({
