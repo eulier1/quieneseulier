@@ -1,40 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-desktop',
   templateUrl: './desktop.component.html',
   styleUrls: ['./desktop.component.sass']
 })
-export class DesktopComponent implements OnInit {
-
-  public innerWidth = 0
-  public displayMobileUX = false
-  public displayDesktopUX = false
-
-  public slides = [
-    {img: 'http://placehold.it/350x150/000000'},
-    {img: 'http://placehold.it/350x150/111111'},
-    {img: 'http://placehold.it/350x150/333333'},
-    {img: 'http://placehold.it/350x150/666666'}
-  ];
-  public slideConfig = {'slidesToShow': 4, 'slidesToScroll': 4};
+export class DesktopComponent implements OnInit, AfterViewInit {
 
   public navigations = [
-    { name: 'Acerca', isActive: true},
-    { name: 'Portafolio', isActive: true},
-    // { name: 'Habilidades', isActive: true},
-    // { name: 'Otros', isActive: true}
+    { name: 'Acerca', value: 'About', isActive: true},
+    { name: 'Portafolio', value: 'Portfolio', isActive: true},
+    { name: 'Habilidades', value: 'Skill', isActive: true},
+    { name: 'Otros', value: 'Other', isActive: true}
   ]
 
-  selectOption = 'Acerca';
+  selectOption = 'About';
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit() {
   }
 
-  navTo(name: string, ev: any){
-    ev.preventDefault();
+  ngOnInit() {
+    this.selectOption = 'About';
+  }
+
+  ngAfterViewInit(){
+    this.selectOption = 'About';
+  }
+
+  navTo(name: string){
     this.selectOption = name;
   }
 

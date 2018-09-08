@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.onResize();
   }
 
+  @HostListener('window:resize', ['$event'])
   onResize() {
     this.innerWidth = window.innerWidth;
     if ( this.innerWidth <= 768 ) {

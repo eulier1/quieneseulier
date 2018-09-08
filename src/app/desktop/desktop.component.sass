@@ -1,14 +1,44 @@
 figure 
     display: inline-block
-
+    margin-bottom: 1.5rem
+    margin-left: 1rem
+    filter: drop-shadow(10px 15px 7px rgba(0, 0, 0, 0.5))
+    height: 165px
+    width: 165px
+    
 a   
     font-size: 0.9rem !important
+    line-height: 3rem
+    word-spacing: 1rem
+
+.album-image
+    -webkit-clip-path: polygon(9% 0, 87% 8%, 72% 95%, 1% 72%);
+    clip-path: polygon(9% 0, 87% 8%, 72% 95%, 1% 72%);
+
+footer
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
 
 .country-flag
     width : 1rem 
 
-.title-name
-    font-family: 'Timmana', sans-serif;
+.displayNone
+    display: none;
+    flex: none;
+
+.navigation__item
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    
+    div
+        padding-left: 1vw;
+        padding-right: 1vw;
+
+.footer
+    padding: 1rem
+    margin-bottom: 0
 
 @media screen and (min-width: 1088px) 
     .container

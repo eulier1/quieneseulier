@@ -1,19 +1,11 @@
-<!-- <p>
-  Primer trabajo, el cliente quería una intranet de compra y venta de vehiculos. Utilice Webflow para el diseño, Laravel (Php), Jquery y PostgresSQL.
-  <figure class="image is-4by3">
-    <img class="" src="../assets/img/portfolio1.1.png">
-  </figure>
 
-</p>
+<h1 class="title is-3 title__font--Timmana"> Ultimos Trabajos </h1>
+<h1 class="title is-5 has-text-left ">
+  {{currentProjectInfo.name}}
+</h1>
+<h2 class="subtitle" [innerHTML]="currentProjectInfo.description" class="has-text-left">
+</h2>
+<br>
+<gallery [items]="images" [thumb]="false" (indexChange)="displayProjectInfo($event)" ></gallery>
 
-<p>
-  Sistema gestionador de radios, trabajando como Front-end, utilizando Angular.
-</p>
-
-<p>
-  Desarrollo Móvil como Front-end utilizando Ionic 1, de restaurantes.
-    - Mostrar un timeline menu de restaurantes cercanos a su posición
-    - Buscar restaurantes por nombres, precio, calificación y su posición cercana utilizando Google Maps
-    - Enviar una calificación al restaurante
-</p> -->
-<h1> Actualizando, pronto en linea ;) </h1>
+<a class="anchor__link--continue subtitle is-6" href="javascript:void(0);"  (click)="goToSkill($event)" >Continuar >></a>

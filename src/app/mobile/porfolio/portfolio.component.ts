@@ -149,6 +149,6 @@ export class PortfolioComponent implements OnInit, AfterContentInit {
       new ImageItem({ src: 'assets/img/portfolio4.7.png', thumb: 'assets/img/portfolio4.7.png' }),
       new ImageItem({ src: 'assets/img/portfolio4.8.png', thumb: 'assets/img/portfolio4.8.png' })
     ];
-}
+  }
 
 }

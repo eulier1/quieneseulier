@@ -1,38 +1,45 @@
-<div >
-    <div class="columns is-gapless is-tablet">
-      <div class="column has-text-centered is-6">
-        <section class="hero has-background-light is-fullheight">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="">
-                  <figure class="image is-128x128">
-                    <img class="is-rounded" src="assets/img/profile-sm.jpg">
-                  </figure>
-              </h1>
-              <h1 class="title is-6 title-name">
-                Eulier Arturo González Milano <img class="country-flag" src="assets/img/ve.svg" alt="">
-              </h1>
-              <h2 class="subtitle is-6">
-                Diseñador y desarrollador front-end
-              </h2>
-              <div class="columns is-gapless " > 
-                <div class="column" *ngFor="let navigate of navigations" >
-                  <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="" (click)="navTo(navigate.name, $event)" >{{navigate.name}}</a>
-                </div>         
-              </div>
+<div [ngSwitch]="selectOption" >
+  <div class="columns is-gapless is-tablet is-marginless">
+    <div class="column has-text-centered is-4">
+      <section class="hero has-background-light is-fullheight animated fadeIn" >
+        <div class="hero-body">
+          <div class="container">
+            <figure class="image" >
+              <img class="album-image" style="box-shadow: 2px 3px 6px darkolivegreen" src="assets/img/profile-sm.jpg">
+            </figure>
+            <h1 class="title is-6 title-name">
+              Eulier Arturo González Milano <img class="country-flag" src="assets/img/ve.svg" alt="">
+            </h1>
+            <h2 class="subtitle is-6">
+              Diseñador y desarrollador front-end
+            </h2>
+            <div class="navigation__item" > 
+              <div class="" *ngFor="let navigate of navigations" >
+                <a [ngClass]="{ 'active' : navigate.isActive }" class="subtitle is-6 title-name" href="javascript:void(0);" (click)="$event.preventDefault(); navTo(navigate.value)" >{{navigate.name}}</a>
+              </div>         
             </div>
           </div>
-        </section>
-      </div>
-      <div class="column has-text-centered ">
-          <section class="hero is-fullheight">
-              <div class="hero-body">
-                <div class="container">
-                    <app-desktop-about *ngIf="selectOption === 'Acerca' " ></app-desktop-about>
-                    <app-desktop-portfolio *ngIf="selectOption === 'Portafolio' " ></app-desktop-portfolio>
-                </div>
-              </div>
-          </section>
-      </div>
+        </div>
+      </section>
+    </div>
+    <div class="column has-text-centered ">
+      <section id="content" class="hero is-fullheight animated fadeInRight fast">
+          <div class="hero-body">
+            <div class="container">
+              <app-desktop-about *ngSwitchCase="'About'" (nextStep)="navTo($event)" ></app-desktop-about>
+              <app-desktop-portfolio *ngSwitchCase="'Portfolio'" (nextStep)="navTo($event)" ></app-desktop-portfolio>
+              <app-desktop-skill *ngSwitchCase="'Skill'" (nextStep)="navTo($event)" ></app-desktop-skill>
+              <app-desktop-other *ngSwitchCase="'Other'" (nextStep)="navTo($event)" ></app-desktop-other>
+            </div>
+          </div>
+      </section>
     </div>
   </div>
+  <footer class="footer has-background-grey-darker">
+    <div class="content has-text-centered">
+      <p class="has-text-white-ter">
+        Made with <i class="fas fa-heart has-text-danger"></i> & <i class="fab fa-angular has-text-danger"></i> 6 Copyright 2018
+      </p>
+    </div>
+  </footer>
+</div>  
