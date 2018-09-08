@@ -10,10 +10,12 @@ export class AboutComponent implements OnInit, AfterContentInit {
   @Output() nextStep = new EventEmitter<string>();
   public content = '';
 
-  constructor() { }
+  constructor() {
+    this.initContent();
+  }
 
   ngOnInit() {
-    this.initContent();
+
   }
 
   ngAfterContentInit(){
@@ -22,7 +24,7 @@ export class AboutComponent implements OnInit, AfterContentInit {
 
   initContent() {
     this.content = `
-    Comencé en el diseño y desarrollo web hace 3 años, con Php utilizando el framework
+    <span class="first-letter">C</span>omencé en el diseño y desarrollo web hace 3 años, con Php utilizando el framework
     Laravel en una intranet para un cliente, y a su vez en Javascript e interesado mas en este último lenguaje,
     empleando Linux (Xubuntu, Lubuntu, Ubuntu, ElementaryOS) como S.O. de desarrollo, para luego abordar a angulajs y finalmente
     Angular, de la mano de Ionic, utilizando el sistema de control de versiones Git, el cliente de GitKraken,
