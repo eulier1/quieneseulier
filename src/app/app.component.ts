@@ -29,12 +29,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.innerWidth = window.innerWidth;
-    if ( this.innerWidth <= 768 ) {
+    if ( this.innerWidth <= 767 ) {
       console.log('/mobile');
-      this.router.navigateByUrl('/mobile');
+      this.router.navigate(['/mobile']);
     } else {
       console.log('/desktop');
-      this.router.navigateByUrl('/desktop');
+      this.router.navigate(['/desktop']);
     }
   }
 
