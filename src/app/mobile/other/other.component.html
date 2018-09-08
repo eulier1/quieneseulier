@@ -24,13 +24,14 @@
             ¿Deseas comunicarte conmigo para hablar de ideas o proyectos interesantes?
           </h2>
 
-          <a class="button is-primary" href="https://www.messenger.com/t/eulier.gonzalez">
-            <span>Salúdame por Messenger</span> 
-            <span class="icon">
-              <i class="fab fa-facebook-messenger"></i>
-            </span>
-          </a>
-
+          <div>
+            <a class="button is-primary" href="https://www.messenger.com/t/eulier.gonzalez">
+              <span>Salúdame por Messenger</span> 
+              <span class="icon">
+                <i class="fab fa-facebook-messenger"></i>
+              </span>
+            </a>
+          </div>
           <!-- <hr> -->
 
           <!-- <a class="button is-primary" href="javascript:void(0);" (click)="showEmailContact = true" >
@@ -91,8 +92,8 @@
                   </button>
               </div>
           </form> -->
+          <a class="anchor__link--continue subtitle is-6" href="javascript:void(0);"  (click)="$event.preventDefault(); goToHome($event)" > Ir a Home >></a>
         </div>
-        <a class="anchor__link--continue subtitle is-6" href="javascript:void(0);"  (click)="$event.preventDefault(); goToHome($event)" > Ir a Home >></a>
       </div>
   </section>
   
